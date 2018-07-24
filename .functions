@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Turns on second screen 
+# Puts the first one on the right of the second one
+resolve_display() {
+	echo "Turning on the screen"
+	xrandr --output HDMI-2 --auto
+
+	if [ "$1" = "right" ] 
+	then
+		echo "Setting the screen on the right of the computer"
+		xrandr --output HDMI-2 --right-of eDP-1			
+	else
+		echo "Setting the screen on the left of the computer"
+		xrandr --output HDMI-2 --left-of eDP-1	
+	fi	
+	
+	return
+}

@@ -102,3 +102,4 @@ export PATH=/home/fberrez/bin:/home/fberrez/.local/bin:/usr/local/sbin:/usr/loca
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
+source ~/.functions
