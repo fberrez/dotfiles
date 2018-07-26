@@ -102,4 +102,9 @@ export PATH=/home/fberrez/bin:/home/fberrez/.local/bin:/usr/local/sbin:/usr/loca
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
+
+# Adds personal functions
 source ~/.functions
+
+# Adds the use of the multimedia keys with Spotify
+xbindkeys
