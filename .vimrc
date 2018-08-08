@@ -16,5 +16,9 @@ call plug#begin('$HOME/.vim/plugged')
 " Plugins
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'vim-airline/vim-airline'
-
+Plug 'pangloss/vim-javascript'
 call plug#end()
+
+" pangloss/vim-javascript
+let g:javascript_plugin_jsdoc = 1 " Enables syntax highlighting for JSDocs
+
