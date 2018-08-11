@@ -35,3 +35,7 @@ Use it with:
 ```bash
 $ source .extra
 ```
+
+**Other packages to install**
+
+- `acpi-support` -> contains scripts to react to various ACPI events (such as screen brightness shortcuts)
