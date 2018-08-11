@@ -27,7 +27,7 @@ module.exports = {
     foregroundColor: '#fff',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#123',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -72,6 +72,7 @@ module.exports = {
       lightWhite: '#ffffff'
     },
 
+
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
@@ -115,7 +116,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-snazzy"],
+	plugins: ["hyper-snazzy", "hyperline#0.6.1"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -126,4 +127,5 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
   }
+
 };
