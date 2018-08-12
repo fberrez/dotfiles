@@ -40,3 +40,8 @@ $ source .extra
 
 - `acpi-support` -> contains scripts to react to various ACPI events (such as screen brightness shortcuts)
 - `arc-theme numix-gtk-theme numix-icon-theme` -> theme & icons
+
+**Shortcuts to add**
+- `amixer sset 'Master' 1+ toggle` -> Mute/Unmute volume
+- `amixer sset 'Master' 5%-`
+- `amixer sset 'Master' 5%+`
