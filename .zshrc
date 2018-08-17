@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-export GOPATH=/home/fberrez/Workspace
+export GOPATH=/home/fberrez/workspace
 export PATH=/home/fberrez/bin:/home/fberrez/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/fberrez/.vimpkg/bin:$GOPATH:$GOPATH/bin:/usr/bin/vault
 
 autoload -U +X bashcompinit && bashcompinit
