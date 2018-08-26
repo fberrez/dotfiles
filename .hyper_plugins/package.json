@@ -9,6 +9,6 @@
   "dependencies": {
     "hyper-snazzy": "latest",
     "hyperline": "0.6.1",
-    "prop-types": "^15.6.2"
+    "hypercwd": "latest"
   }
 }

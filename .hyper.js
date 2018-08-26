@@ -6,7 +6,7 @@ module.exports = {
   config: {
     // Choose either "stable" for receiving highly polished,
     // or "canary" for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
     fontSize: 15,
@@ -116,7 +116,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-	plugins: ["hyper-snazzy", "hyperline#0.6.1"],
+	plugins: ["hyper-snazzy", "hyperline#0.6.1", "hypercwd"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
