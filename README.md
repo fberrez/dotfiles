@@ -23,11 +23,13 @@ GIT_USER_EMAIL="Email Address"
 GIT_USER_NAME="Name"
 GIT_GPG_PROGRAM=gpg
 GIT_COMMIT_GPGSIGN=true
+GIT_SIGNING_KEY=YOUR_GPG_KEY
 
 git config --global user.name "$GIT_USER_NAME"
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global gpg.program "$GIT_GPG_PROGRAM"
 git config --global commit.gpgsign "$GIT_COMMIT_GPGSIGN"
+git config --global user.signingkey "$GIT_SIGNING_KEY"
 ```
 
 Use it with:
