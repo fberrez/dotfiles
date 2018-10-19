@@ -7,8 +7,8 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# pure
-ZSH_THEME="refined"
+# refined
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -24,8 +24,7 @@ ZSH_THEME="refined"
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Uncomment the following line to disable bi-weekly auto-update checks.  # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -96,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 export GOPATH=/home/fberrez/workspace
 export PATH=/home/fberrez/bin:/home/fberrez/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/fberrez/.vimpkg/bin:$GOPATH:$GOPATH/bin:/usr/bin/vault
 
@@ -108,3 +106,8 @@ source ~/.functions
 
 # Adds the use of the multimedia keys with Spotify
 xbindkeys
+source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/fberrez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/fberrez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
