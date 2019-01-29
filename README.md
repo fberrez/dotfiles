@@ -1,20 +1,21 @@
 # dotfiles
 
-
-
 **To install:**
 
 It creates symlinks from this repo to your home folder.
+It also installs `go`, `go dep`, `atom`... and creates new GPG and SSH key for git & Github.
 
-```bash
+```sh
 $ make
+$ chmod u+x install.sh
+$ ./install.sh
 ```
 
 **Git credentials:**
 
 It sets correctly git credentials.
 
-```bash
+```sh
 ###
 ### Git credentials
 ###
@@ -34,8 +35,16 @@ git config --global user.signingkey "$GIT_SIGNING_KEY"
 
 Use it with:
 
-```bash
+```sh
 $ source .extra
+```
+
+**Add atom link**
+
+```sh
+$ rm /usr/local/bin/atom
+
+$ ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
 ```
 
 **Other packages to install**

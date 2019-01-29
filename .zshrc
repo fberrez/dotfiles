@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/fberrez/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -95,8 +95,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GOPATH=/home/fberrez/workspace
-export PATH=/home/fberrez/bin:/home/fberrez/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/fberrez/.vimpkg/bin:$GOPATH:$GOPATH/bin:/usr/bin/vault
+export GOPATH=$HOME/workspace
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:$HOME/.vimpkg/bin:$GOPATH:$GOPATH/bin:/usr/bin/vault
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
@@ -104,10 +104,5 @@ complete -o nospace -C /usr/bin/vault vault
 # Adds personal functions
 source ~/.functions
 
-# Adds the use of the multimedia keys with Spotify
-xbindkeys
-source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/fberrez/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/fberrez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/fberrez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Adds zsh-syntax-highlighting
+source $HOME/workspace/src/github.com/fberrez/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
