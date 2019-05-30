@@ -3,7 +3,7 @@
 # Defines color variables
 green="\033[0;32m"
 nocolor="\033[0m"
-githubEmail="florent.berrez@gmail.com"
+githubEmail="your_email@host.com"
 
 echo -e "${green}Installing brew...${nocolor}"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
