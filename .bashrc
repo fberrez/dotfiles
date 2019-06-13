@@ -3,6 +3,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Load functions
+if [ -f ~/.functions ]; then
+    . ~/.functions
+fi
+
 # Exports environment variables
 export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
@@ -24,6 +29,12 @@ export HISTFILE=$HOME/.bash_history
 export HISTSIZE=1000
 # HISTFILESIZE is the number of lines or commands that are allowed in the history file at startup.
 export HISTFILESIZE=1000
+# Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # Customizes /bin/bash appearance
 # Colors

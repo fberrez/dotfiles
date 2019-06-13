@@ -17,3 +17,8 @@ resolve_display() {
 	
 	return
 }
+
+# Create a dir and cd into it
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
