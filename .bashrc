@@ -19,8 +19,6 @@ export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
 
 # History management
-
-
 export HISTFILE=$HOME/.bash_history
 # HISTSIZE is the number of lines or commands that are stored while the bash session is ongoing.
 export HISTSIZE=1000
@@ -36,10 +34,10 @@ third="\033[33m"
 
 # Adds git branch display to bash 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\] $default\$ "
+export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(parse_git_branch) $default\$ "
 
 # Adds colors to CLI and `ls`
 export CLICOLOR=1
