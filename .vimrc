@@ -52,5 +52,9 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
+" Clears word highlighting in the current document
+" but leaves the search term in the search register
+nnoremap <C-x> :noh<CR>
+
 " Senter after going to the end of the file
 noremap G Gzz
