@@ -11,7 +11,7 @@ fi
 # Exports environment variables
 export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/opt/go/libexec
 export EDITOR='vim'
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
