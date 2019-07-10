@@ -11,6 +11,7 @@ call plug#begin('$HOME/.vim/plugged')
 " plugins
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'vim-airline/vim-airline'
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
@@ -45,6 +46,9 @@ set ignorecase
 set smartcase
 " highlight search results
 set hlsearch
+
+" disable vim-go template
+let g:go_template_autocreate = 0
 
 " Smart move between windows
 noremap <C-j> <C-W>j
