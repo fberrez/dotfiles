@@ -22,6 +22,8 @@ export PATH=$PATH:/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
+export PATH=$PATH:/Users/fberrez/Library/Python/2.7/bin
+export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
 export HISTFILE=$HOME/.bash_history
