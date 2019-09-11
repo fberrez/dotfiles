@@ -22,7 +22,6 @@ export PATH=$PATH:/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
-export PATH=$PATH:/Users/fberrez/Library/Python/2.7/bin
 export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
@@ -33,10 +32,6 @@ export HISTSIZE=1000
 export HISTFILESIZE=1000
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-# After each command, append to the history file and reread it
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # Customizes /bin/bash appearance
 # Colors
@@ -56,3 +51,15 @@ export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(pars
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
+
+if [[ -f ~/.parkkirc ]]; then
+    source ~/.parkkirc
+fi
+
+if [[ -f ~/.parkki_aliases ]]; then
+    source ~/.parkki_aliases
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
