@@ -22,3 +22,8 @@ resolve_display() {
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
+
+# Pretty print json in shell
+prettyjson() {
+    echo "$1" | python -m json.tool
+}
