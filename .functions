@@ -27,3 +27,19 @@ mkcd() {
 prettyjson() {
     echo "$1" | python -m json.tool
 }
+
+# mount-google-drive mounts the google drive folder.
+# if it cannot gets a response from google.com after a ping, 
+# it would retry 30 seconds later
+mount-google-drive ()
+{
+    path="${HOME}/google-drive"
+    if ping -c 1 google.com >> /dev/null 2>&1; then
+        mount | grep ${path} >/dev/null || /usr/bin/google-drive-ocamlfuse ${path} 
+    else
+        sleep 30s
+        mount-google-drive
+    fi
+}
+
+mount-google-drive
