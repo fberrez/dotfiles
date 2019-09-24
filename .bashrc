@@ -11,8 +11,9 @@ fi
 # Exports environment variables
 export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/go
 export EDITOR='vim'
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/sbin
@@ -22,6 +23,7 @@ export PATH=$PATH:/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
+export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
@@ -54,6 +56,6 @@ if [[ -f ~/.parkki_aliases ]]; then
     source ~/.parkki_aliases
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    mount-google-drive
+fi
