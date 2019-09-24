@@ -13,7 +13,7 @@ export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
 export EDITOR='vim'
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/sbin
@@ -28,12 +28,6 @@ export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
 export HISTFILE=$HOME/.bash_history
-# HISTSIZE is the number of lines or commands that are stored while the bash session is ongoing.
-export HISTSIZE=1000
-# HISTFILESIZE is the number of lines or commands that are allowed in the history file at startup.
-export HISTFILESIZE=1000
-# Avoid duplicates
-export HISTCONTROL=ignoredups:erasedups
 
 # Customizes /bin/bash appearance
 # Colors
