@@ -28,6 +28,11 @@ prettyjson() {
     echo "$1" | python -m json.tool
 }
 
+# dsrm stop and rm a running docker container.
+dsrm() {
+    docker rm `docker stop $1`
+}
+
 # mount-google-drive mounts the google drive folder.
 # if it cannot gets a response from google.com after a ping, 
 # it would retry 30 seconds later
