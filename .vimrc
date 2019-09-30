@@ -71,3 +71,9 @@ set clipboard=unnamed
 
 " Enable specific rules for some programming language
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+
+" if a saved session exists in the current directory,
+" it automatically open it.
+if filereadable("session.vim")
+    source session.vim
+endif
