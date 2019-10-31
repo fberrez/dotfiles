@@ -36,8 +36,7 @@ dsrm() {
 # mount-google-drive mounts the google drive folder.
 # if it cannot gets a response from google.com after a ping, 
 # it would retry 30 seconds later
-mount-google-drive ()
-{
+mount-google-drive () {
     path="${HOME}/google-drive"
     if ping -c 1 google.com >> /dev/null 2>&1; then
         mount | grep ${path} >/dev/null || /usr/bin/google-drive-ocamlfuse ${path} 
@@ -47,4 +46,32 @@ mount-google-drive ()
     fi
 }
 
-mount-google-drive
+# vpn-is-running returns true if openvpn is running;
+vpn-is-running() {
+    # checks if the command pvpn exists
+    if [ ! -x "$(command -v pvpn)" ]; then
+        echo 0
+        return
+    fi
+
+    IFS=" "
+
+    # gets the first line of pvpn --status and splits it
+    # (i.e: [OpenVPN Status]: Running)
+    read -ra words <<< "$(pvpn --status>&1 | head -n 1)"
+    for word in "${words[@]}"; do
+        if [ "$word" = "Not" ]; then
+            echo 0
+            return
+        fi;
+
+        if [ "$word" = "Running" ]; then
+            echo 1
+            return
+        fi;
+    done
+
+    echo 0
+    return
+}
+

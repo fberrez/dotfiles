@@ -56,6 +56,6 @@ if [[ -f ~/.parkki_aliases ]]; then
     source ~/.parkki_aliases
 fi
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    mount-google-drive
+if [ $(vpn-is-running) -eq 0 ]; then
+    echo "Warning: VPN is not connected"
 fi
