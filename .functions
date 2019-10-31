@@ -74,4 +74,3 @@ vpn-is-running() {
     echo 0
     return
 }
-
