@@ -13,7 +13,7 @@ fi
 # Exports environment variables
 export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/go
 export EDITOR='vim'
 
 # Upates PATH
@@ -31,16 +31,6 @@ export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
 export HISTFILE=$HOME/.bash_history
-# HISTSIZE is the number of lines or commands that are stored while the bash session is ongoing.
-export HISTSIZE=1000
-# HISTFILESIZE is the number of lines or commands that are allowed in the history file at startup.
-export HISTFILESIZE=1000
-# Avoid duplicates
-export HISTCONTROL=ignoredups:erasedups
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-# After each command, append to the history file and reread it
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # Customizes /bin/bash appearance
 # Colors
@@ -60,3 +50,15 @@ export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(pars
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
+
+if [[ -f ~/.parkkirc ]]; then
+    source ~/.parkkirc
+fi
+
+if [[ -f ~/.parkki_aliases ]]; then
+    source ~/.parkki_aliases
+fi
+
+if [ $(vpn-is-running) -eq 0 ]; then
+    echo "Warning: VPN is not connected"
+fi
