@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Load aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -13,15 +15,17 @@ export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export EDITOR='vim'
+
+# Upates PATH
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOBIN
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOBIN
 export PATH=$PATH:/Users/fberrez/Library/Python/2.7/bin
 export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
