@@ -22,7 +22,3 @@ resolve_display() {
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
-
-realpath() {
-    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
-}
