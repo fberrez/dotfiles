@@ -17,3 +17,5 @@ alias gitc="git commit"
 alias gitps="git push"
 alias gitpl="git pull"
 alias gitf="git fetch"
+
+alias workspace="cd ~/workspace/src/github.com/fberrez/"
