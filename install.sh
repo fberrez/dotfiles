@@ -21,17 +21,6 @@ echo -e "${green}Installing solarized dark terminal theme...${nocolor}"
 git clone https://github.com/tomislav/osx-terminal.app-colors-solarized.git solarized/
 open solarized/Solarized\ Dark.terminal
 
-
-echo -e "${green}Installing zsh...${nocolor}"
-brew install zsh
-
-echo -e "${green}Installing oh-my-zsh...${nocolor}"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo -e "${green}Installing zsh-syntax-highlighting${nocolor}"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 echo -e "${green}Generating a new GPG key (Github)${nocolor}"
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG

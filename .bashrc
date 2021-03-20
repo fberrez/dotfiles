@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Load aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -13,17 +15,18 @@ export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
 export EDITOR='vim'
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Upates PATH
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOBIN
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOBIN
-export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:/Users/fberrez/Library/Python/2.7/bin
 export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
 
 # History management
@@ -56,6 +59,6 @@ if [[ -f ~/.parkki_aliases ]]; then
     source ~/.parkki_aliases
 fi
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    mount-google-drive
+if [ $(vpn-is-running) -eq 0 ]; then
+    echo "Warning: VPN is not connected"
 fi
