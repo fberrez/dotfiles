@@ -2,7 +2,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Load aliases
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+        . ~/.bash_aliases
 fi
 
 # Load functions
