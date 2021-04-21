@@ -4,9 +4,9 @@ alias curl="curl -w '\n'"
 alias dps="docker ps"
 alias drm="docker rm"
 alias drmi="docker rmi"
-alias dc="docker-compose"
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 
 # print current directory as a tree
 alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers" $1'
