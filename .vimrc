@@ -66,9 +66,6 @@ nnoremap <C-x> :noh<CR>
 " Senter after going to the end of the file
 noremap G Gzz
 
-" Enable copy to clipboard
-set clipboard=unnamed
-
 " ctrl+r to search and replace in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
