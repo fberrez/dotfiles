@@ -13,6 +13,7 @@ alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers" $1'
 
 # git aliases
 alias gits="git status"
+alias gitd="git diff"
 alias gitc="git commit"
 alias gitps="git push"
 alias gitpl="git pull"
