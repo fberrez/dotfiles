@@ -11,16 +11,14 @@ alias dcd="docker compose down"
 # git aliases
 alias ga="git add"
 alias gt="git status"
+alias gps="git push"
+alias gpl="git pull"
+alias gs="git status"
+alias gd="git diff"
+alias gc="git commit"
+alias gf="git fetch"
 
 # print current directory as a tree
 alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers" $1'
-
-# git aliases
-alias gits="git status"
-alias gitd="git diff"
-alias gitc="git commit"
-alias gitps="git push"
-alias gitpl="git pull"
-alias gitf="git fetch"
 
 alias workspace="cd ~/workspace/src/github.com/fberrez/"
