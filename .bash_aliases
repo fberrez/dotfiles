@@ -18,6 +18,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gc="git commit"
 alias gf="git fetch"
+alias gch="git checkout"
 
 # print current directory as a tree
 alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers" $1'
