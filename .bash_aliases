@@ -7,6 +7,7 @@ alias drmi='docker rmi $(docker images --filter "dangling=true" -q)'
 alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
+alias dl="docker logs -f"
 
 # git aliases
 alias ga="git add"
