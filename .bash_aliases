@@ -2,7 +2,7 @@ alias curl="curl -w '\n'"
 
 # docker aliases
 alias dps="docker ps"
-alias drm="docker rm $(docker ps -aq -f status=exited)"
+alias drm="docker rm $(docker ps -a -f status=exited -q)"
 alias drmi='docker rmi $(docker images --filter "dangling=true" -q)'
 alias dc="docker compose"
 alias dcu="docker compose up"
