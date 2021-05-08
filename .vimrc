@@ -5,9 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" theme settings
-set background=light
-
 " plugins directory
 call plug#begin('$HOME/.vim/plugged')
 
@@ -15,8 +12,13 @@ call plug#begin('$HOME/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'vim-airline/vim-airline'
 Plug 'tomlion/vim-solidity'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
+
+" theme settings
+set background=dark
+colorscheme gruvbox 
 
 set encoding=utf-8
 
