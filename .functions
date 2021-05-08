@@ -18,7 +18,22 @@ resolve_display() {
 	return
 }
 
-# Create a dir and cd into it
+# Creates a dir and cd into it
 mkcd() {
     mkdir -p "$1" && cd "$1"
+}
+
+# Removes exited containers
+drm() {
+    docker rm $(docker ps -a -f status=exited -q)
+}
+
+# Removes dangling images
+drmi() {
+    docker rmi $(docker images --filter "dangling=true" -q)
+}
+
+# Search for a specific term in a js project 
+searchjs() {
+    grep -r --include=*.js --exclude-dir={"vendor|.git|.github|node_modules|containers"} "$1" app/
 }
