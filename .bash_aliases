@@ -19,6 +19,11 @@ alias gf="git fetch"
 alias gch="git checkout"
 
 # print current directory as a tree
-alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers" $1'
+alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers|*.bson|*.metadata.json" $1'
 
+# jumps to workspace
 alias workspace="cd ~/workspace/src/github.com/fberrez/"
+
+alias lsal="ls -al"
+
+alias eslint="eslint --config .eslintrc.js"
