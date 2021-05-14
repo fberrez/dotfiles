@@ -32,3 +32,8 @@ drm() {
 drmi() {
     docker rmi $(docker images --filter "dangling=true" -q)
 }
+
+# Search for a specific term in a js project 
+searchjs() {
+    grep -r --include=*.js --exclude-dir={"vendor|.git|.github|node_modules|containers"} "$1" app/
+}
