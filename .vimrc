@@ -13,7 +13,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'vim-airline/vim-airline'
 Plug 'tomlion/vim-solidity'
 Plug 'morhetz/gruvbox'
-
+Plug 'w0rp/ale'
 call plug#end()
 
 " theme settings
@@ -75,3 +75,12 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 let mapleader = "'"
+
+" vim-prettier config
+let g:prettier#autoformat_require_pragma = 0
+
+" eslint/eslint config
+let g:ale_fixers = {
+ \ 'javascript': ['prettier', 'eslint']
+ \ }
+let g:ale_fix_on_save = 1
