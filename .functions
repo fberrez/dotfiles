@@ -33,7 +33,35 @@ drmi() {
     docker rmi $(docker images --filter "dangling=true" -q)
 }
 
-# Search for a specific term in a js project 
+# Searches for a specific term in a js project 
 searchjs() {
     grep -r --include=*.js --exclude-dir={"vendor|.git|.github|node_modules|containers"} "$1" app/
+}
+
+# Asks the user to confirm an action
+confirm() {
+    read -p "Are you sure to: $1? " -n 1 -r
+    echo    # move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        return 1;
+    fi
+
+    return 0;
+}
+
+# Swaps .env files. if a .env.prod exists, it will rename .env to .env.dev amd move .env.prod to .env and vice-versa. 
+swap_dot_env() {
+    if [[ -f .env.prod ]]; then
+        confirm "swap from dev to prod" 
+        if [ $? -eq 1 ]; then
+            mv .env .env.dev
+            mv .env.prod .env
+        fi
+    elif [[ -f .env.dev ]]; then
+        confirm "swap from prod to dev" 
+        if [ $? -eq 1 ]; then
+            mv .env .env.dev
+            mv .env.prod .env
+        fi
+    fi
 }
