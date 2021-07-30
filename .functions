@@ -60,8 +60,8 @@ swap_dot_env() {
     elif [[ -f .env.dev ]]; then
         confirm "swap from prod to dev" 
         if [ $? -eq 1 ]; then
-            mv .env .env.dev
-            mv .env.prod .env
+            mv .env .env.prod
+            mv .env.dev .env
         fi
     fi
 }
