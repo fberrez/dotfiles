@@ -65,3 +65,10 @@ swap_dot_env() {
         fi
     fi
 }
+
+# Kills process using specific port
+# usage: $ kill_process_using 3001
+kill_process_using() {
+    # sends TERM
+    kill -15 $(lsof -nP -iTCP -sTCP:LISTEN | grep $1 | awk '{print $2}')
+}
