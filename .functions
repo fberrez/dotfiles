@@ -40,7 +40,7 @@ searchjs() {
 
 # Asks the user to confirm an action
 confirm() {
-    read -p "Are you sure to: $1? " -n 1 -r
+    read -p "Are you sure to: $1 [y/N]? " -n 1 -r
     echo    # move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         return 1;
