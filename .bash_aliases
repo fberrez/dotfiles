@@ -26,7 +26,10 @@ alias tre='tree -R -aI "vendor|.git|.github|node_modules|containers|*.bson|*.met
 
 # jumps to workspace
 alias workspace="cd ~/workspace/src/github.com/fberrez/"
+alias mambo="cd ~/workspace/src/github.com/Mambo-Corp/mambo-electron"
 
 alias lsal="ls -al"
 
 alias eslint="eslint --config .eslintrc.js"
+
+alias code="code-insiders"

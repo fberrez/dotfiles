@@ -1,1 +1,5 @@
 .extra
+kafka-data
+kafka-ui-data
+zookeeper-data
+zookeeper-logs

@@ -52,13 +52,13 @@ confirm() {
 # Swaps .env files. if a .env.prod exists, it will rename .env to .env.dev amd move .env.prod to .env and vice-versa. 
 swap_dot_env() {
     if [[ -f .env.prod ]]; then
-        confirm "swap from dev to prod" 
+        confirm -p "swap from dev to prod" 
         if [ $? -eq 1 ]; then
             mv .env .env.dev
             mv .env.prod .env
         fi
     elif [[ -f .env.dev ]]; then
-        confirm "swap from prod to dev" 
+        confirm -p "swap from prod to dev" 
         if [ $? -eq 1 ]; then
             mv .env .env.prod
             mv .env.dev .env

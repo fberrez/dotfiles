@@ -13,7 +13,7 @@ fi
 # Exports environment variables
 export GOPATH=$HOME/workspace
 export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/go/bin
 export EDITOR='vim'
 
 # Upates PATH
@@ -58,3 +58,6 @@ fi
 if [[ -f ~/.parkki_aliases ]]; then
     source ~/.parkki_aliases
 fi
+
+source /Users/fberrez/.docker/init-bash.sh || true # Added by Docker Desktop
+. "$HOME/.cargo/env"
