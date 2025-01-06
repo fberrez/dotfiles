@@ -33,3 +33,6 @@ alias lsal="ls -al"
 alias eslint="eslint --config .eslintrc.js"
 
 alias code="code-insiders"
+
+alias python=python3
+alias pip=pip3

@@ -11,15 +11,9 @@ if [ -f ~/.functions ]; then
 fi
 
 # Exports environment variables
-export GOPATH=$HOME/workspace
-export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/go/bin
 export EDITOR='vim'
 
 # Upates PATH
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOBIN
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/sbin
@@ -61,3 +55,4 @@ fi
 
 source /Users/fberrez/.docker/init-bash.sh || true # Added by Docker Desktop
 . "$HOME/.cargo/env"
+. "/Users/fberrez/.deno/env"

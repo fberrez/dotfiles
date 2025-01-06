@@ -10,7 +10,7 @@ services:
       - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:29092
       - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
       - KAFKA_CLUSTERS_1_NAME=parkki
-      - KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS=b-3.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092,b-2.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092,b-1.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092
+      - KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS=b-1.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092,b-2.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092,b-3.kafka-dev-prod.mzc4gg.c5.kafka.eu-central-1.amazonaws.com:9092
     volumes:
       - ./kafka-ui-data:/data
     depends_on:
@@ -48,6 +48,17 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     volumes:
       - ./kafka-data:/var/lib/kafka/data
+    networks:
+      - kafka-net
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: redis-server --appendonly yes
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis-data:/data
     networks:
       - kafka-net
 

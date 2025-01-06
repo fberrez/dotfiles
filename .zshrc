@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/fberrez/.zsh/completions:"* ]]; then export FPATH="/Users/fberrez/.zsh/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -70,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting colored-man-pages colorize pip python brew z)
+plugins=(git zsh-syntax-highlighting colored-man-pages colorize z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,22 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load aliases
-if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
-fi
-
-# Load functions
-if [ -f ~/.functions ]; then
-    . ~/.functions
-fi
-
-if [[ -f ~/.parkkirc ]]; then
-    source ~/.parkkirc
-fi
-
-if [[ -f ~/.parkki_aliases ]]; then
-    source ~/.parkki_aliases
-fi
+for file in ~/.bash_aliases ~/.functions ~/.parkkirc ~/.parkki_aliases; do
+  [ -f "$file" ] && source "$file"
+done
 
 
 source /Users/fberrez/.docker/init-zsh.sh || true # Added by Docker Desktop
@@ -124,10 +113,12 @@ source /Users/fberrez/.docker/init-zsh.sh || true # Added by Docker Desktop
 export PATH="/Users/fberrez/.bin/:$PATH"
 
 
-
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
 
 # pnpm
 export PNPM_HOME="/Users/fberrez/Library/pnpm"
@@ -138,8 +129,15 @@ esac
 # pnpm end
 
 # bun completions
-[ -s "/Users/fberrez/.bun/_bun" ] && source "/Users/fberrez/.bun/_bun"
-
-# bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+bun() {
+  unset -f bun
+  [ -s "/Users/fberrez/.bun/_bun" ] && source "/Users/fberrez/.bun/_bun"
+  bun "$@"
+}
+
+export PATH="$HOME/.bin:$PNPM_HOME:$BUN_INSTALL/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
+
+
+
+. "/Users/fberrez/.deno/env"

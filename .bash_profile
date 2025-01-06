@@ -21,3 +21,4 @@ source /Users/fberrez/.docker/init-bash.sh || true # Added by Docker Desktop
 # # <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
+. "/Users/fberrez/.deno/env"
