@@ -36,3 +36,8 @@ alias code="code-insiders"
 
 alias python=python3
 alias pip=pip3
+
+# cursor cli for linux
+cursor() {        
+    /home/fberrez/cursor "$@" > /dev/null 2>&1 &
+}

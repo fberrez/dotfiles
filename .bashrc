@@ -44,15 +44,3 @@ export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(pars
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
-
-if [[ -f ~/.parkkirc ]]; then
-    source ~/.parkkirc
-fi
-
-if [[ -f ~/.parkki_aliases ]]; then
-    source ~/.parkki_aliases
-fi
-
-source /Users/fberrez/.docker/init-bash.sh || true # Added by Docker Desktop
-. "$HOME/.cargo/env"
-. "/Users/fberrez/.deno/env"

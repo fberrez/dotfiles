@@ -103,25 +103,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load aliases
-for file in ~/.bash_aliases ~/.functions ~/.parkkirc ~/.parkki_aliases; do
+for file in ~/.bash_aliases ~/.functions; do
   [ -f "$file" ] && source "$file"
 done
 
 
-source /Users/fberrez/.docker/init-zsh.sh || true # Added by Docker Desktop
+# source /Users/fberrez/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 export PATH="/Users/fberrez/.bin/:$PATH"
 
 
 export NVM_DIR="$HOME/.nvm"
-nvm() {
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  nvm "$@"
-}
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
 # pnpm
-export PNPM_HOME="/Users/fberrez/Library/pnpm"
+export PNPM_HOME="/home/fberrez/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -137,7 +134,4 @@ bun() {
 }
 
 export PATH="$HOME/.bin:$PNPM_HOME:$BUN_INSTALL/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
-
-
-
-. "/Users/fberrez/.deno/env"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
