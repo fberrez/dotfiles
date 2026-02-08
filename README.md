@@ -1,58 +1,39 @@
 # dotfiles
 
-**To install:**
+Personal dotfiles for macOS and Linux.
 
-It creates symlinks from this repo to your home folder.
-It also installs `go`, `go dep`, `atom`... and creates new GPG and SSH key for git & Github.
+## Install
 
-```sh
-$ make
-$ chmod u+x install.sh
-$ ./install.sh
-```
-
-**Git credentials:**
-
-It sets correctly git credentials.
+Creates symlinks from this repo to your home folder:
 
 ```sh
-###
-### Git credentials
-###
-
-GIT_USER_EMAIL="Email Address"
-GIT_USER_NAME="Name"
-GIT_GPG_PROGRAM=gpg
-GIT_COMMIT_GPGSIGN=true
-GIT_SIGNING_KEY=YOUR_GPG_KEY
-
-git config --global user.name "$GIT_USER_NAME"
-git config --global user.email "$GIT_USER_EMAIL"
-git config --global gpg.program "$GIT_GPG_PROGRAM"
-git config --global commit.gpgsign "$GIT_COMMIT_GPGSIGN"
-git config --global user.signingkey "$GIT_SIGNING_KEY"
+make
 ```
 
-Use it with:
+## Structure
+
+- `.shared_env` — Shared environment (PATH, tools, aliases, functions) sourced by both bash and zsh
+- `.bashrc` — Bash-specific config (prompt, colors)
+- `.bash_profile` — macOS bash login shell (sources .bashrc)
+- `.zshrc` — Zsh config (oh-my-zsh, plugins, completions)
+- `.bash_aliases` — Shell aliases (git, docker, etc.)
+- `.functions` — Shell functions (docker cleanup, git worktrees, etc.)
+- `.vimrc` — Vim configuration
+- `.extra` — Machine-specific config (gitignored)
+- `docker-compose.yml` — Local dev services (Kafka, Redis)
+
+## Machine-specific config
+
+Add secrets, host-specific aliases, and credentials to `.extra` (gitignored):
 
 ```sh
-$ source .extra
+# Git credentials
+git config --global user.name "Name"
+git config --global user.email "Email"
+git config --global gpg.program gpg
+git config --global commit.gpgsign true
+git config --global user.signingkey YOUR_GPG_KEY
+
+# Host-specific aliases
+alias vps="ssh -i ~/.ssh/key user@host"
 ```
-
-**Add atom link**
-
-```sh
-$ rm /usr/local/bin/atom
-
-$ ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
-```
-
-**Other packages to install**
-
-- `acpi-support` -> contains scripts to react to various ACPI events (such as screen brightness shortcuts)
-- `arc-theme numix-gtk-theme numix-icon-theme` -> theme & icons
-
-**Shortcuts to add**
-- `amixer sset 'Master' 1+ toggle` -> Mute/Unmute volume
-- `amixer sset 'Master' 5%-`
-- `amixer sset 'Master' 5%+`

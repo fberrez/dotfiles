@@ -1,5 +1,8 @@
 .extra
+.DS_Store
+.planning
 kafka-data
 kafka-ui-data
 zookeeper-data
 zookeeper-logs
+redis-data

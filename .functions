@@ -1,20 +1,24 @@
 #!/bin/bash
 
-# Turns on second screen 
-# Puts the first one on the right of the second one
+# Turns on second screen (Linux/X11 only)
 resolve_display() {
+	if ! is_linux; then
+		echo "resolve_display: only available on Linux (X11)"
+		return 1
+	fi
+
 	echo "Turning on the screen"
 	xrandr --output HDMI-2 --auto
 
-	if [ "$1" = "right" ] 
+	if [ "$1" = "right" ]
 	then
 		echo "Setting the screen on the right of the computer"
-		xrandr --output HDMI-2 --right-of eDP-1			
+		xrandr --output HDMI-2 --right-of eDP-1
 	else
 		echo "Setting the screen on the left of the computer"
-		xrandr --output HDMI-2 --left-of eDP-1	
-	fi	
-	
+		xrandr --output HDMI-2 --left-of eDP-1
+	fi
+
 	return
 }
 
@@ -33,7 +37,7 @@ drmi() {
     docker rmi $(docker images --filter "dangling=true" -q)
 }
 
-# Searches for a specific term in a js project 
+# Searches for a specific term in a js project
 searchjs() {
     grep -r --include=*.js --exclude-dir={"vendor|.git|.github|node_modules|containers"} "$1" app/
 }
@@ -49,16 +53,16 @@ confirm() {
     return 0;
 }
 
-# Swaps .env files. if a .env.prod exists, it will rename .env to .env.dev amd move .env.prod to .env and vice-versa. 
+# Swaps .env files
 swap_dot_env() {
     if [[ -f .env.prod ]]; then
-        confirm -p "swap from dev to prod" 
+        confirm "swap from dev to prod"
         if [ $? -eq 1 ]; then
             mv .env .env.dev
             mv .env.prod .env
         fi
     elif [[ -f .env.dev ]]; then
-        confirm -p "swap from prod to dev" 
+        confirm "swap from prod to dev"
         if [ $? -eq 1 ]; then
             mv .env .env.prod
             mv .env.dev .env
@@ -71,4 +75,46 @@ swap_dot_env() {
 kill_process_using() {
     # sends TERM
     kill -15 $(lsof -nP -iTCP -sTCP:LISTEN | grep $1 | awk '{print $2}')
+}
+
+# Create a new worktree and branch from within current git directory
+gwa() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: gwa [branch name]"
+        return 1
+    fi
+
+    local branch="$1"
+    local base="$(basename "$PWD")"
+    local path="../${base}--${branch}"
+
+    git worktree add -b "$branch" "$path"
+    command -v mise &>/dev/null && mise trust "$path"
+    cd "$path"
+}
+
+# Remove worktree and branch from within active worktree directory
+gwd() {
+    if ! command -v gum &>/dev/null; then
+        echo "gwd requires 'gum'. Install: https://github.com/charmbracelet/gum"
+        return 1
+    fi
+
+    if gum confirm "Remove worktree and branch?"; then
+        local cwd worktree branch root
+
+        cwd="$(pwd)"
+        worktree="$(basename "$cwd")"
+
+        # split on first `--`
+        root="${worktree%%--*}"
+        branch="${worktree#*--}"
+
+        # Protect against accidentally nuking a non-worktree directory
+        if [[ "$root" != "$worktree" ]]; then
+            cd "../$root"
+            git worktree remove "$worktree" --force
+            git branch -D "$branch"
+        fi
+    fi
 }

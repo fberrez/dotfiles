@@ -1,46 +1,25 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Load aliases
-if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
+# Shared environment (PATH, tools, aliases, functions)
+if [ -f "$HOME/.shared_env" ]; then
+    . "$HOME/.shared_env"
 fi
 
-# Load functions
-if [ -f ~/.functions ]; then
-    . ~/.functions
-fi
+# History
+export HISTFILE="$HOME/.bash_history"
 
-# Exports environment variables
-export EDITOR='vim'
+# Prompt — git branch display
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-# Upates PATH
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/bin
-export PATH=$PATH:/Users/fberrez/Library/Python/2.7/bin
-export PATH=$PATH:/Users/fberrez/Library/Python/3.7/bin
-
-# History management
-export HISTFILE=$HOME/.bash_history
-
-# Customizes /bin/bash appearance
-# Colors
 default="\033[39m"
 first="\033[36m"
 second="\033[32m"
 third="\033[33m"
 
-# Adds git branch display to bash 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(parse_git_branch) $default\$ "
 
-# Adds colors to CLI and `ls`
+# Colors
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-alias ls='ls -GFh'

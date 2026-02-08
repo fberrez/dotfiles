@@ -1,24 +1,7 @@
-# Make `.bashrc` more resilient. `.bash_profile` is a specific MacOS script which replaces `.bashrc`.
-if [ -r ~/.bashrc ]; then
-   source ~/.bashrc
+# .bash_profile is macOS's login shell script — just source .bashrc
+if [ -r "$HOME/.bashrc" ]; then
+    source "$HOME/.bashrc"
 fi
 
-source /Users/fberrez/.docker/init-bash.sh || true # Added by Docker Desktop
-
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/fberrez/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/fberrez/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/fberrez/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/fberrez/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-
-. "$HOME/.cargo/env"
-. "/Users/fberrez/.deno/env"
+# Docker Desktop (macOS)
+[ -f "$HOME/.docker/init-bash.sh" ] && source "$HOME/.docker/init-bash.sh"

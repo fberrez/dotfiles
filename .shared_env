@@ -1,0 +1,62 @@
+# Shared environment — sourced by both .bashrc and .zshrc
+
+# OS Detection
+is_macos() { [[ "$(uname)" == "Darwin" ]]; }
+is_linux() { [[ "$(uname)" == "Linux" ]]; }
+
+# Editor
+export EDITOR='vim'
+
+# PATH — standard system paths
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+# Platform-aware ls
+if is_macos; then
+    alias ls='ls -GFh'
+else
+    alias ls='ls --color=auto -Fh'
+fi
+
+# Cargo
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# Deno
+[ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# pnpm
+if is_macos; then
+    export PNPM_HOME="$HOME/Library/pnpm"
+else
+    export PNPM_HOME="$HOME/pnpm"
+fi
+case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Go
+export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
+
+# Flutter
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+# RVM — keep as last PATH modification per RVM docs
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Load aliases and functions
+[ -f "$HOME/.bash_aliases" ] && . "$HOME/.bash_aliases"
+[ -f "$HOME/.functions" ] && . "$HOME/.functions"
+
+# Load machine-specific config (gitignored)
+[ -f "$HOME/.extra" ] && . "$HOME/.extra"
