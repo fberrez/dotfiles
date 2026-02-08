@@ -9,6 +9,8 @@ export EDITOR='vim'
 
 # PATH — standard system paths
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+# Homebrew (Apple Silicon: /opt/homebrew, Intel: /usr/local — already covered above)
+[ -d "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 # Platform-aware ls
