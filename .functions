@@ -86,11 +86,11 @@ gwa() {
 
     local branch="$1"
     local base="$(basename "$PWD")"
-    local path="../${base}--${branch}"
+    local worktree_path="../${base}--${branch}"
 
-    git worktree add -b "$branch" "$path"
-    command -v mise &>/dev/null && mise trust "$path"
-    cd "$path"
+    git worktree add -b "$branch" "$worktree_path"
+    command -v mise &>/dev/null && mise trust "$worktree_path"
+    cd "$worktree_path"
 }
 
 # Remove worktree and branch from within active worktree directory
