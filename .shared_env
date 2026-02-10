@@ -59,6 +59,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Load aliases and functions
 [ -f "$HOME/.bash_aliases" ] && . "$HOME/.bash_aliases"
 [ -f "$HOME/.functions" ] && . "$HOME/.functions"
+[ -f "$HOME/.korint" ] && . "$HOME/.korint"
 
 # Load machine-specific config (gitignored)
 [ -f "$HOME/.extra" ] && . "$HOME/.extra"
