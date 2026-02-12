@@ -32,4 +32,5 @@ alias code="code-insiders"
 alias python=python3
 alias pip=pip3
 
-alias claudex="claude --allow-dangerously-skip-permissions"
+alias claude="claude --allow-dangerously-skip-permissions"
+alias korint="cd ~/workspace/src/github.com/korint-io"
