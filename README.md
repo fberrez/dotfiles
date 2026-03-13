@@ -21,6 +21,17 @@ make
 - `.vimrc` — Vim configuration
 - `.extra` — Machine-specific config (gitignored)
 - `docker-compose.yml` — Local dev services (Kafka, Redis)
+- `.claude/commands/` — Claude Code custom slash commands
+
+## Claude Code Commands
+
+Custom slash commands symlinked to `~/.claude/commands/`:
+
+| Command | Description |
+|---------|-------------|
+| `/linkedin-post` | Write LinkedIn posts with a spicy, constructive tone — fetches live Korint updates and hiring data |
+| `/bluesky-post` | Write Bluesky posts/threads with a raw, unfiltered dev voice — 300 char limit, thread support |
+| `/reddit-post` | Write Reddit posts with an authentic, community-first voice — war stories, no self-promotion |
 
 ## Machine-specific config
 
