@@ -17,7 +17,7 @@ alias gc="git commit"
 alias gf="git fetch"
 alias gch="git checkout"
 alias gl="git log"
-alias gt="git tag"
+# alias gt="git tag" - not used, also reserved to gastown
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # tree
