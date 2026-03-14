@@ -1,7 +1,8 @@
 ---
-name: reddit-post
+name: korint-reddit-post
 description: Write Reddit posts with an authentic, community-first voice — real war stories about AI in production, no self-promotion vibes
 argument-hint: "<topic> [subreddit]"
+allowed-tools: ["WebFetch"]
 ---
 
 Write a Reddit post about the topic provided in `$ARGUMENTS`. If a subreddit is specified, adapt the tone and depth accordingly. Default subreddit style: r/programming or r/ExperiencedDevs.
@@ -42,9 +43,19 @@ Adapt tone based on target subreddit:
 - **r/artificial**: AI-focused, balanced perspective (not hype, not doom)
 - **r/devops**: Infrastructure angle, CI/CD, automation specifics
 
+## Bottom Line
+
+**Do NOT include a hiring CTA or company plug in the post body.** Reddit will destroy you for it.
+
+Instead, add a **separate comment** (clearly labeled as such) to post as a reply to your own post:
+
+"Disclosure: I work at Korint, an insurance tech platform. Happy to answer questions about our stack (NestJS/TypeScript monorepo, 10 microservices, Prisma, RabbitMQ). We're also hiring if anyone's interested: https://www.welcometothejungle.com/fr/companies/korint-1/jobs"
+
+Before writing, use WebFetch on `https://www.welcometothejungle.com/fr/companies/korint-1/jobs` to get current open roles count and mention it in the comment. If fetch fails, use the generic link above.
+
 ## Behavior
 
 1. Write the post immediately — no preamble, no "here's a draft"
-2. Present title, body, and optional self-reply comment separately
+2. Present title, body, and self-reply comment separately
 3. If the user asks for adjustments, iterate fast
 4. Never explain the format rules — just apply them

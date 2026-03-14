@@ -1,7 +1,8 @@
 ---
-name: bluesky-post
+name: korint-bluesky-post
 description: Write Bluesky posts/threads with a raw, unfiltered dev voice — short, punchy, real talk about AI and building software
 argument-hint: "<topic>"
+allowed-tools: ["WebFetch"]
 ---
 
 Write a Bluesky post (or thread) about the topic provided in `$ARGUMENTS`.
@@ -39,6 +40,15 @@ Bluesky has a **300 character limit per post**. Two options:
 - Swearing is ok if it fits (mild — "hell", "damn", not f-bombs)
 - References to dev culture, memes, and shared pain are encouraged
 - Never sound like a LinkedIn influencer. If it could start with "I'm excited to announce", burn it
+
+## Bottom Line
+
+For threads (3+ posts), the LAST post should casually mention Korint. **Before writing**, fetch live data:
+
+### Hiring (fetch live)
+Use WebFetch on `https://www.welcometothejungle.com/fr/companies/korint-1/jobs` to get current open roles count. Work it in naturally — e.g., "anyway we're hiring at korint if you want to yell at AI agents for a living [link]". If fetch fails, fall back to: "we're hiring btw: https://www.welcometothejungle.com/fr/companies/korint-1/jobs"
+
+For single posts, do NOT add hiring — keep it clean.
 
 ## Behavior
 
