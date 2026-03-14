@@ -2,6 +2,7 @@
 name: bluesky-post
 description: Write Bluesky posts/threads with a raw, unfiltered dev voice — short, punchy, real talk about AI and building software
 argument-hint: "<topic>"
+allowed-tools: ["Bash"]
 ---
 
 Write a Bluesky post (or thread) about the topic provided in `$ARGUMENTS`.
@@ -43,6 +44,8 @@ Bluesky has a **300 character limit per post**. Two options:
 ## Behavior
 
 1. Write the post immediately — no preamble, no "here's a draft"
-2. Present it clean, ready to copy-paste
-3. If the user asks for adjustments, iterate fast
-4. Never explain the format rules — just apply them
+2. **After writing each post, verify the character count using Bash**: `echo -n "<post text>" | wc -m`. If any post exceeds 300 characters, shorten it and re-verify. Do not present the post until it passes
+3. Display the char count next to each post (e.g., `[247/300]`)
+4. Present it clean, ready to copy-paste
+5. If the user asks for adjustments, iterate fast and re-verify the count
+6. Never explain the format rules — just apply them
