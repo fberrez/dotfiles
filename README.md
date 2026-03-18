@@ -20,7 +20,6 @@ make
 - `.functions` — Shell functions (docker cleanup, git worktrees, etc.)
 - `.vimrc` — Vim configuration
 - `.extra` — Machine-specific config (gitignored)
-- `docker-compose.yml` — Local dev services (Kafka, Redis)
 - `.claude/commands/` — Claude Code custom slash commands
 
 ## Claude Code Commands
@@ -29,9 +28,12 @@ Custom slash commands symlinked to `~/.claude/commands/`:
 
 | Command | Description |
 |---------|-------------|
-| `/linkedin-post` | Write LinkedIn posts with a spicy, constructive tone — fetches live Korint updates and hiring data |
-| `/bluesky-post` | Write Bluesky posts/threads with a raw, unfiltered dev voice — 300 char limit, thread support |
-| `/reddit-post` | Write Reddit posts with an authentic, community-first voice — war stories, no self-promotion |
+| `/linkedin-post` | Write LinkedIn posts with a spicy, constructive tone about AI/tech — rage bait meets real insight |
+| `/bluesky-post` | Write Bluesky posts/threads with a raw, unfiltered dev voice — short, punchy, real talk about AI and building software |
+| `/reddit-post` | Write Reddit posts with an authentic, community-first voice — real war stories about AI in production, no self-promotion vibes |
+| `/korint-linkedin-post` | Write LinkedIn posts with a spicy, constructive tone about AI in insurance/tech — rage bait meets real insight |
+| `/korint-bluesky-post` | Write Bluesky posts/threads with a raw, unfiltered dev voice — short, punchy, real talk about AI and building software |
+| `/korint-reddit-post` | Write Reddit posts with an authentic, community-first voice — real war stories about AI in production, no self-promotion vibes |
 
 ## Machine-specific config
 
