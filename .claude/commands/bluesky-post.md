@@ -24,7 +24,7 @@ Bluesky has a **300 character limit per post**. Two options:
 ### Single post (preferred for punchy takes)
 - One sharp observation or hot take
 - Under 300 characters. Count carefully
-- End with 1-3 hashtags (e.g., #ai #devlife). Total post including hashtags must stay under 300 chars
+- End with hashtags: always include #ai #webdev #indiedev. Total post including hashtags must stay under 300 chars
 - No threads unless needed
 
 ### Thread (for stories or longer takes)

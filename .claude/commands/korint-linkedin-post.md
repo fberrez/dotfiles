@@ -31,7 +31,7 @@ Every post follows this structure:
 
 - Short paragraphs (1-3 lines max)
 - Line breaks between paragraphs for LinkedIn readability
-- End with 3-5 high-impact hashtags (LinkedIn's algorithm treats them as SEO metadata — more isn't better). Prefer high-follower tags like #artificialintelligence (2.1M+), #softwareengineering (1M+), #opensource (800K+), #innovation (1.6M+), #technology (4.2M+). Mix with niche tags relevant to the topic (e.g., #insurtech, #buildinpublic, #promptengineering)
+- End with 3-5 high-impact hashtags (LinkedIn's algorithm treats them as SEO metadata — more isn't better). Always include #ai #webdev #indiedev. Mix with high-follower tags like #artificialintelligence (2.1M+), #softwareengineering (1M+), #opensource (800K+), #innovation (1.6M+), #technology (4.2M+) or niche tags relevant to the topic (e.g., #insurtech, #buildinpublic, #promptengineering)
 - Emojis sparingly if at all
 - **Keep under 1300 characters (~200 words)** for optimal engagement
 
