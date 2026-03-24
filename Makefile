@@ -1,6 +1,6 @@
-.PHONY: all link claude
+.PHONY: all link claude ghostty
 
-all: link claude
+all: link claude ghostty
 
 link:
 	for file in $(shell find $(CURDIR) -maxdepth 1 -name ".*" -not -name ".git" -not -name ".DS_Store" -not -name ".planning" -not -name ".gitignore" -not -name ".claude"); do \
@@ -15,3 +15,8 @@ claude:
 		ln -sfn $$file $(HOME)/.claude/commands/$$f; \
 		echo "Linked Claude command: $$f"; \
 	done
+
+ghostty:
+	@mkdir -p "$(HOME)/Library/Application Support/com.mitchellh.ghostty"
+	@ln -sfn $(CURDIR)/ghostty/config "$(HOME)/Library/Application Support/com.mitchellh.ghostty/config"
+	@echo "Linked Ghostty config"

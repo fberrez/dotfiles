@@ -21,6 +21,7 @@ make
 - `.vimrc` — Vim configuration
 - `.extra` — Machine-specific config (gitignored)
 - `.claude/commands/` — Claude Code custom slash commands
+- `ghostty/config` — Ghostty terminal configuration
 
 ## Claude Code Commands
 
