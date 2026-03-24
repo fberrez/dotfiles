@@ -28,7 +28,10 @@ Custom slash commands symlinked to `~/.claude/commands/`:
 
 | Command | Description |
 |---------|-------------|
-| `/linkedin-post` | Write LinkedIn posts with a spicy, constructive tone about AI/tech — rage bait meets real insight |
+| `/linkedin-post` | Write LinkedIn posts using emotional psychology triggers — pick your trigger, craft content that makes people feel something |
+| `/linkedin-ideas` | Generate LinkedIn post ideas using the 6 emotional triggers — turn one topic into multiple high-engagement angles |
+| `/linkedin-lead-magnet` | Write LinkedIn lead magnet posts that drive comments/DMs — FOMO stacking, investment signaling, and comment triggers |
+| `/linkedin-belief-disruptor` | Write LinkedIn posts that challenge existing beliefs — create problem awareness in people who don't know they have a problem yet |
 | `/bluesky-post` | Write Bluesky posts/threads with a raw, unfiltered dev voice — short, punchy, real talk about AI and building software |
 | `/reddit-post` | Write Reddit posts with an authentic, community-first voice — real war stories about AI in production, no self-promotion vibes |
 | `/korint-linkedin-post` | Write LinkedIn posts with a spicy, constructive tone about AI in insurance/tech — rage bait meets real insight |
