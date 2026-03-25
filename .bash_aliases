@@ -33,4 +33,4 @@ alias python=python3
 alias pip=pip3
 
 alias claude="claude --allow-dangerously-skip-permissions"
-alias korint="cd ~/workspace/src/github.com/korint-io"
+alias korint="cd ~/workspace/src/github.com/korint-io/korint-root"
