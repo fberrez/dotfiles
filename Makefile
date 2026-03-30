@@ -15,6 +15,12 @@ claude:
 		ln -sfn $$file $(HOME)/.claude/commands/$$f; \
 		echo "Linked Claude command: $$f"; \
 	done
+	@for file in settings.json statusline-command.sh; do \
+		if [ -f $(CURDIR)/.claude/$$file ]; then \
+			ln -sfn $(CURDIR)/.claude/$$file $(HOME)/.claude/$$file; \
+			echo "Linked Claude config: $$file"; \
+		fi; \
+	done
 
 ghostty:
 	@mkdir -p "$(HOME)/Library/Application Support/com.mitchellh.ghostty"
