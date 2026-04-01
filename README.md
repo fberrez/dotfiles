@@ -1,5 +1,14 @@
 # dotfiles
 
+![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![Shell](https://img.shields.io/badge/Shell-Bash%20%7C%20Zsh-4EAA25?style=flat&logo=gnu-bash&logoColor=white)
+![Vim](https://img.shields.io/badge/Vim-019733?style=flat&logo=vim&logoColor=white)
+![Ghostty](https://img.shields.io/badge/Ghostty-terminal-blue?style=flat)
+[![License](https://img.shields.io/github/license/fberrez/dotfiles?style=flat)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/fberrez/dotfiles?style=flat)](https://github.com/fberrez/dotfiles/commits/master)
+[![Repo Size](https://img.shields.io/github/repo-size/fberrez/dotfiles?style=flat)](https://github.com/fberrez/dotfiles)
+
 Personal dotfiles for macOS and Linux.
 
 ## Install
@@ -54,3 +63,17 @@ git config --global user.signingkey YOUR_GPG_KEY
 # Host-specific aliases
 alias vps="ssh -i ~/.ssh/key user@host"
 ```
+
+## GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=fberrez&show_icons=true&theme=dark&hide_border=true&count_private=true" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fberrez&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=fberrez&theme=dark&hide_border=true" alt="GitHub Streak" />
+</p>
