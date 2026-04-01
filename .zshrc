@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/fberrez/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # Deno completions
 if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then
     export FPATH="$HOME/.zsh/completions:$FPATH"
@@ -23,3 +30,9 @@ bun() {
 
 # Docker Desktop (macOS)
 [ -f "$HOME/.docker/init-zsh.sh" ] && source "$HOME/.docker/init-zsh.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+export RTK_TELEMETRY_DISABLED=1
