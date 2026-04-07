@@ -23,3 +23,5 @@ export PS1="\[$first\]\u\[\033[m\]@\[$second\]\h:\[$default\]\W\[$third\]\$(pars
 # Colors
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1
